@@ -2,6 +2,7 @@
 #include <NativeEthernet.h>
 #include <NativeEthernetUdp.h>
 #include <Metro.h>
+#include <USBHost_t36.h>
 
 // ---------- ネットワーク設定 ----------
 byte mac[] = { 0x04, 0xE9, 0xE5, 0x00, 0x00, 0x01 };
@@ -9,6 +10,7 @@ IPAddress ip(192, 168, 1, 10);        // Teensy IP
 IPAddress pc_ip(192, 168, 1, 20);     // ミニPC IP
 unsigned int localPort = 8888;
 EthernetUDP Udp;
+USBHost usbHost;
 
 // ---------- バイナリ構造体定義 ----------
 #pragma pack(push, 1)
@@ -30,6 +32,7 @@ Metro statusTimer(100);    // 0.1秒(100ms)周期
 
 void setup() {
   Serial.begin(115200);
+  usbHost.begin();
   Ethernet.begin(mac, ip);
   Udp.begin(localPort);
   
