@@ -1,0 +1,2 @@
+[console_scripts]
+udp_node = monorail_bridge.udp_node:main
