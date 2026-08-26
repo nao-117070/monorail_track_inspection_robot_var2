@@ -1,0 +1,35 @@
+running egg_info
+creating ../../build/monorail_bridge/monorail_bridge.egg-info
+writing ../../build/monorail_bridge/monorail_bridge.egg-info/PKG-INFO
+writing dependency_links to ../../build/monorail_bridge/monorail_bridge.egg-info/dependency_links.txt
+writing entry points to ../../build/monorail_bridge/monorail_bridge.egg-info/entry_points.txt
+writing requirements to ../../build/monorail_bridge/monorail_bridge.egg-info/requires.txt
+writing top-level names to ../../build/monorail_bridge/monorail_bridge.egg-info/top_level.txt
+writing manifest file '../../build/monorail_bridge/monorail_bridge.egg-info/SOURCES.txt'
+reading manifest file '../../build/monorail_bridge/monorail_bridge.egg-info/SOURCES.txt'
+writing manifest file '../../build/monorail_bridge/monorail_bridge.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/build/monorail_bridge/build
+creating /home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/build/monorail_bridge/build/lib
+creating /home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/build/monorail_bridge/build/lib/monorail_bridge
+copying monorail_bridge/__init__.py -> /home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/build/monorail_bridge/build/lib/monorail_bridge
+copying monorail_bridge/udp_node.py -> /home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/build/monorail_bridge/build/lib/monorail_bridge
+running install
+running install_lib
+creating /home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/install/monorail_bridge/lib/python3.12/site-packages/monorail_bridge
+copying /home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/build/monorail_bridge/build/lib/monorail_bridge/__init__.py -> /home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/install/monorail_bridge/lib/python3.12/site-packages/monorail_bridge
+copying /home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/build/monorail_bridge/build/lib/monorail_bridge/udp_node.py -> /home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/install/monorail_bridge/lib/python3.12/site-packages/monorail_bridge
+byte-compiling /home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/install/monorail_bridge/lib/python3.12/site-packages/monorail_bridge/__init__.py to __init__.cpython-312.pyc
+byte-compiling /home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/install/monorail_bridge/lib/python3.12/site-packages/monorail_bridge/udp_node.py to udp_node.cpython-312.pyc
+running install_data
+creating /home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/install/monorail_bridge/share/ament_index
+creating /home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/install/monorail_bridge/share/ament_index/resource_index
+creating /home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/install/monorail_bridge/share/ament_index/resource_index/packages
+copying resource/monorail_bridge -> /home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/install/monorail_bridge/share/ament_index/resource_index/packages
+copying package.xml -> /home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/install/monorail_bridge/share/monorail_bridge
+running install_egg_info
+Copying ../../build/monorail_bridge/monorail_bridge.egg-info to /home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/install/monorail_bridge/lib/python3.12/site-packages/monorail_bridge-0.0.0-py3.12.egg-info
+running install_scripts
+Installing udp_node script to /home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/install/monorail_bridge/lib/monorail_bridge
+writing list of installed files to '/home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/build/monorail_bridge/install.log'

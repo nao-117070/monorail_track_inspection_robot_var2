@@ -1,0 +1,37 @@
+[0.918s] Invoking command in '/home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/src/monorail_bridge': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/build/monorail_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/install/monorail_bridge/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/monorail_bridge build --build-base /home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/build/monorail_bridge/build install --record /home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/build/monorail_bridge/install.log --install-scripts $base/lib/monorail_bridge --single-version-externally-managed install_data
+[1.068s] running egg_info
+[1.068s] creating ../../build/monorail_bridge/monorail_bridge.egg-info
+[1.077s] writing ../../build/monorail_bridge/monorail_bridge.egg-info/PKG-INFO
+[1.077s] writing dependency_links to ../../build/monorail_bridge/monorail_bridge.egg-info/dependency_links.txt
+[1.078s] writing entry points to ../../build/monorail_bridge/monorail_bridge.egg-info/entry_points.txt
+[1.078s] writing requirements to ../../build/monorail_bridge/monorail_bridge.egg-info/requires.txt
+[1.078s] writing top-level names to ../../build/monorail_bridge/monorail_bridge.egg-info/top_level.txt
+[1.078s] writing manifest file '../../build/monorail_bridge/monorail_bridge.egg-info/SOURCES.txt'
+[1.097s] reading manifest file '../../build/monorail_bridge/monorail_bridge.egg-info/SOURCES.txt'
+[1.098s] writing manifest file '../../build/monorail_bridge/monorail_bridge.egg-info/SOURCES.txt'
+[1.098s] running build
+[1.098s] running build_py
+[1.098s] creating /home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/build/monorail_bridge/build
+[1.098s] creating /home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/build/monorail_bridge/build/lib
+[1.098s] creating /home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/build/monorail_bridge/build/lib/monorail_bridge
+[1.098s] copying monorail_bridge/__init__.py -> /home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/build/monorail_bridge/build/lib/monorail_bridge
+[1.098s] copying monorail_bridge/udp_node.py -> /home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/build/monorail_bridge/build/lib/monorail_bridge
+[1.098s] running install
+[1.103s] running install_lib
+[1.113s] creating /home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/install/monorail_bridge/lib/python3.12/site-packages/monorail_bridge
+[1.113s] copying /home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/build/monorail_bridge/build/lib/monorail_bridge/__init__.py -> /home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/install/monorail_bridge/lib/python3.12/site-packages/monorail_bridge
+[1.113s] copying /home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/build/monorail_bridge/build/lib/monorail_bridge/udp_node.py -> /home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/install/monorail_bridge/lib/python3.12/site-packages/monorail_bridge
+[1.113s] byte-compiling /home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/install/monorail_bridge/lib/python3.12/site-packages/monorail_bridge/__init__.py to __init__.cpython-312.pyc
+[1.114s] byte-compiling /home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/install/monorail_bridge/lib/python3.12/site-packages/monorail_bridge/udp_node.py to udp_node.cpython-312.pyc
+[1.114s] running install_data
+[1.114s] creating /home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/install/monorail_bridge/share/ament_index
+[1.114s] creating /home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/install/monorail_bridge/share/ament_index/resource_index
+[1.114s] creating /home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/install/monorail_bridge/share/ament_index/resource_index/packages
+[1.114s] copying resource/monorail_bridge -> /home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/install/monorail_bridge/share/ament_index/resource_index/packages
+[1.114s] copying package.xml -> /home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/install/monorail_bridge/share/monorail_bridge
+[1.114s] running install_egg_info
+[1.126s] Copying ../../build/monorail_bridge/monorail_bridge.egg-info to /home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/install/monorail_bridge/lib/python3.12/site-packages/monorail_bridge-0.0.0-py3.12.egg-info
+[1.126s] running install_scripts
+[1.201s] Installing udp_node script to /home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/install/monorail_bridge/lib/monorail_bridge
+[1.202s] writing list of installed files to '/home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/build/monorail_bridge/install.log'
+[1.223s] Invoked command in '/home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/src/monorail_bridge' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/build/monorail_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/install/monorail_bridge/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/monorail_bridge build --build-base /home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/build/monorail_bridge/build install --record /home/hitakalab/Documents/monorail_track_inspection_robot_var2/ros2_ws/build/monorail_bridge/install.log --install-scripts $base/lib/monorail_bridge --single-version-externally-managed install_data

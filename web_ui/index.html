@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Monorail Robot Controller</title>
+    <script src="roslib.min.js"></script>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding: 20px; }
+        .btn { font-size: 24px; padding: 20px 40px; margin: 10px; border-radius: 10px; touch-action: manipulation; }
+        .btn-forward { background-color: #4CAF50; color: white; border: none; }
+        .btn-stop { background-color: #f44336; color: white; border: none; }
+        .btn-backward { background-color: #2196F3; color: white; border: none; }
+        .data-box { background-color: #f0f0f0; padding: 15px; margin-top: 20px; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <h1>Monorail Control</h1>
+    
+    <div>
+        <button class="btn btn-forward" onclick="sendCmd(150)">前進 (150 RPM)</button>
+        <button class="btn btn-stop" onclick="sendCmd(0)">停止 (0 RPM)</button>
+        <button class="btn btn-backward" onclick="sendCmd(-150)">後退 (-150 RPM)</button>
+    </div>
+
+    <div class="data-box">
+        <h3>リアルタイムデータ</h3>
+        <p>Potentiometers: <span id="potData">0, 0, 0, 0</span></p>
+        <p>Motor RPMs: <span id="rpmData">0, 0, 0, 0</span></p>
+        <p>Connection: <span id="status" style="color: red;">Disconnected</span></p>
+    </div>
+
+    <script>
+        // 1. ROSBridgeサーバーへ接続 (ミニPCのIPアドレス)
+        var ros = new ROSLIB.Ros({
+            url : 'ws://192.168.1.20:9090'
+        });
+
+        ros.on('connection', function() {
+            document.getElementById('status').innerText = 'Connected';
+            document.getElementById('status').style.color = 'green';
+        });
+        ros.on('error', function(error) {
+            console.log('Error connecting to websocket server: ', error);
+        });
+
+        // 2. 指令配信用 (Publisher)
+        var cmdTopic = new ROSLIB.Topic({
+            ros : ros,
+            name : '/cmd_rpm',
+            messageType : 'std_msgs/Int16'
+        });
+
+        function sendCmd(rpm) {
+            var msg = new ROSLIB.Message({ data: rpm });
+            cmdTopic.publish(msg);
+        }
+
+        // 3. センサデータ受信用 (Subscriber)
+        var sensorTopic = new ROSLIB.Topic({
+            ros : ros,
+            name : '/sensor_data',
+            messageType : 'std_msgs/Int16MultiArray'
+        });
+
+        sensorTopic.subscribe(function(message) {
+            // message.data は [pot0, pot1, pot2, pot3, rpm0, rpm1, rpm2, rpm3]
+            const data = message.data;
+            document.getElementById('potData').innerText = `${data[0]}, ${data[1]}, ${data[2]}, ${data[3]}`;
+            document.getElementById('rpmData').innerText = `${data[4]}, ${data[5]}, ${data[6]}, ${data[7]}`;
+        });
+    </script>
+</body>
+</html>

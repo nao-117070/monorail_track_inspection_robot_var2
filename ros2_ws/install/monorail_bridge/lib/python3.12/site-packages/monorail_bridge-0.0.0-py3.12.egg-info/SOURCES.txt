@@ -1,0 +1,16 @@
+package.xml
+setup.cfg
+setup.py
+../../build/monorail_bridge/monorail_bridge.egg-info/PKG-INFO
+../../build/monorail_bridge/monorail_bridge.egg-info/SOURCES.txt
+../../build/monorail_bridge/monorail_bridge.egg-info/dependency_links.txt
+../../build/monorail_bridge/monorail_bridge.egg-info/entry_points.txt
+../../build/monorail_bridge/monorail_bridge.egg-info/requires.txt
+../../build/monorail_bridge/monorail_bridge.egg-info/top_level.txt
+../../build/monorail_bridge/monorail_bridge.egg-info/zip-safe
+monorail_bridge/__init__.py
+monorail_bridge/udp_node.py
+resource/monorail_bridge
+test/test_copyright.py
+test/test_flake8.py
+test/test_pep257.py
