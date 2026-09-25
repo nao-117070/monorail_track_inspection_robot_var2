@@ -47,6 +47,8 @@ BusLink busBridge(controllerNodeId);
 DriveController driveControl(busBridge, controlIntervalMs);
 IntervalTimer updateTimer;
 
+// ポテンショメータ角度から、モーターへ与える目標RPMを算出する(ここよくわかんないから確認 数式に書き起こしたい)
+
 int16_t calculateTargetRpm(double potAngle, int16_t baseRpm) {
   const double clampedAngle = constrain(potAngle, potMinAngle, potMaxAngle);
   const double normalized = (clampedAngle - potMinAngle) /
@@ -112,7 +114,7 @@ void loop() {
   } else if (packetSize > 0) {
     Udp.flush();
   }
-
+//
   for (uint8_t id = 1; id <= 4; ++id) {
     const double potentiometerAngle = readPotAngle(potentiometerPins[id - 1]);
     driveControl.setTargetSpeed(
