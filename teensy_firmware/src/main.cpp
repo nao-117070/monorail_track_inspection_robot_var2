@@ -14,8 +14,7 @@ const int canBusBaud = 1000000;
 const uint8_t potentiometerPins[4] = {14, 15, 16, 17};
 const double potMinAngle = 109.82;
 const double potMaxAngle = 110.60;
-const float minSpeedRatio = 0.7f;
-const float maxSpeedRatio = 1.3f;
+const float targetRpmGain = 0.3f;
 const double potAnalogMax = 4095.0;
 
 // ---------- ネットワーク設定 ----------
@@ -47,18 +46,18 @@ BusLink busBridge(controllerNodeId);
 DriveController driveControl(busBridge, controlIntervalMs);
 IntervalTimer updateTimer;
 
-// ポテンショメータ角度から、モーターへ与える目標RPMを算出する(ここよくわかんないから確認 数式に書き起こしたい)
+// ポテンショメータの中央からの偏差にゲインを掛けて目標RPMを算出する
 
 int16_t calculateTargetRpm(double potAngle, int16_t baseRpm) {
   const double clampedAngle = constrain(potAngle, potMinAngle, potMaxAngle);
-  const double normalized = (clampedAngle - potMinAngle) /
-                           (potMaxAngle - potMinAngle);
-  const double ratio = minSpeedRatio + normalized * (maxSpeedRatio - minSpeedRatio);
-  const double minTargetRpm = (double)baseRpm * minSpeedRatio;
-  const double maxTargetRpm = (double)baseRpm * maxSpeedRatio;
-  return static_cast<int16_t>(round(constrain((double)baseRpm * ratio,
-                                            minTargetRpm,
-                                            maxTargetRpm)));
+  const double potCenterAngle = (potMinAngle + potMaxAngle) / 2.0;
+  const double normalizedError =
+      (clampedAngle - potCenterAngle) /
+      ((potMaxAngle - potMinAngle) / 2.0);
+  const double targetRpm =
+      static_cast<double>(baseRpm) * (1.0 + targetRpmGain * normalizedError);
+
+  return static_cast<int16_t>(round(targetRpm));
 }
 
 double readPotAngle(uint8_t potPin) {
