@@ -18,9 +18,9 @@
     <h1>Monorail Control</h1>
     
     <div>
-        <button class="btn btn-forward" onclick="sendCmd(150)">前進 (150 RPM)</button>
+        <button id="btnForward" class="btn btn-forward" onclick="sendCmd(BASE_RPM)">前進</button>
         <button class="btn btn-stop" onclick="sendCmd(0)">停止 (0 RPM)</button>
-        <button class="btn btn-backward" onclick="sendCmd(-150)">後退 (-150 RPM)</button>
+        <button id="btnBackward" class="btn btn-backward" onclick="sendCmd(-BASE_RPM)">後退</button>
     </div>
 
     <div class="data-box">
@@ -31,6 +31,13 @@
     </div>
 
     <script>
+        // ★ 基準回転速度（ここを変更するだけで送信値・ボタン表示が一括で変わります）
+        const BASE_RPM = 4361;
+
+        // 画面読み込み時にボタンのテキストを自動更新
+        document.getElementById('btnForward').innerText = `前進 (${BASE_RPM} RPM)`;
+        document.getElementById('btnBackward').innerText = `後退 (-${BASE_RPM} RPM)`;
+
         // 1. ROSBridgeサーバーへ接続 (ミニPCのIPアドレス)
         var ros = new ROSLIB.Ros({
             url : 'ws://192.168.1.20:9090'
@@ -64,9 +71,15 @@
         });
 
         sensorTopic.subscribe(function(message) {
-            // message.data は [pot0, pot1, pot2, pot3, rpm0, rpm1, rpm2, rpm3]
             const data = message.data;
-            document.getElementById('potData').innerText = `${data[0]}, ${data[1]}, ${data[2]}, ${data[3]}`;
+
+            // ポテンショメータの値（data[0]〜[3]）をそれぞれ100で割る
+            const pot0 = data[0] / 100;
+            const pot1 = data[1] / 100;
+            const pot2 = data[2] / 100;
+            const pot3 = data[3] / 100;
+
+            document.getElementById('potData').innerText = `${pot0}, ${pot1}, ${pot2}, ${pot3}`;
             document.getElementById('rpmData').innerText = `${data[4]}, ${data[5]}, ${data[6]}, ${data[7]}`;
         });
     </script>
